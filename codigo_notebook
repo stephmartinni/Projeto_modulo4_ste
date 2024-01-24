@@ -1,0 +1,26 @@
+dados = {
+    'Data': ['21 de Janeiro 2024', '13 de Janeiro 2024', '17 de Janeiro 2024', '24 de Janeiro 2024'],
+    'Horas Trabalhadas': [8, 7, 9, 8],
+    'Bugs Corrigidos': [2, 1, 3, 0],
+    'Tarefas Concluidas': [10, 8, 12, 7]
+}
+
+df = pd.DataFrame(dados)
+
+df
+
+df['Produtividade'] = df['Tarefas Concluidas'] / df['Horas Trabalhadas']
+
+df
+
+relatorio = pd.DataFrame({
+    'Total de Horas Trabalhadas': [df['Horas Trabalhadas'].sum()],
+    'Média Diária de Horas Trabalhadas': [df['Horas Trabalhadas'].mean()],
+    'Total de Bugs Corrigidos': [df['Bugs Corrigidos'].sum()],
+    'Média Diária de Bugs Corrigidos': [df['Bugs Corrigidos'].mean()],
+    'Total de Tarefas Concluídas': [df['Tarefas Concluidas'].sum()],
+    'Média Diária de Tarefas Concluídas': [df['Tarefas Concluidas'].mean()],
+    'Produtividade Diária (Tarefas por Hora)': [df['Produtividade'].mean()]
+})
+
+ relatorio
